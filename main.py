@@ -3,10 +3,13 @@ import pickle
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+import joblib
+
+
 
 
 app = Flask(__name__, template_folder='template')
-adaboost = pickle.load(open('adaboost.pkl', 'rb'))
+adaboost = joblib.load('adaboost.pkl')
 
 @app.route('/')
 def home():
